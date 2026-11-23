@@ -1,0 +1,55 @@
+<div>
+  @if (isStoreOpen) {
+    <h2>We Are Open</h2>
+  } @else {
+    <h2>We Are Closed</h2>
+  }
+
+  <h2>Featured Product</h2>
+
+  <div>
+    <h3>{{ products[0].Name }}</h3>
+    <p>{{ products[0].Description }}</p>
+    <p>
+      Original Price: ${{ products[0].Price }}
+      After Discount: ${{ discountedPrices[0] }}
+
+    </p>
+  </div>
+
+  <h2>Our Products</h2>
+
+  <table border="1">
+    <tr>
+      @for (item of products; track $index) {
+
+          <th>{{ item.Name }}</th>
+
+      }
+    </tr>
+    <tr>
+      @for (item of products; track $index) {
+
+          <td>${{ item.Price }}</td>
+        
+      }
+    </tr>
+  </table>
+
+  <h2>Store Summary</h2>
+
+  <table border="1">
+    <tr>
+      <th>{{ totalProducts }}</th>
+      <th>${{ maximumPrice }}</th>
+      <th>${{ minimumPrice }}</th>
+      <th>${{ sumPrice }}</th>
+    </tr>
+    <tr>
+      <td>Total Products</td>
+      <td>Highest Price</td>
+      <td>Lowest Price</td>
+      <td>Total Products Value</td>
+    </tr>
+  </table>
+</div>
