@@ -1,0 +1,14 @@
+<app-product-details-component
+  [productName]="productName"
+  [description]="description"
+  [price]="price"
+  [isAvailable]="isAvailable"
+  (pName)="addedToChart($event)"
+  (pQuantity)="cartQuantity = $event"
+>
+</app-product-details-component>
+
+<app-shopping-cart-component [productName]="cartName" [price]="cartPrice" [quantity]="cartQuantity">
+</app-shopping-cart-component>
+
+<button (click)="changeProduct()">Change Product</button>

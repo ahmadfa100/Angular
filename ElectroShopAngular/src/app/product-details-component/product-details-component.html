@@ -1,0 +1,31 @@
+<div>
+  <h2>Product Details</h2>
+
+  <h3>{{ productName }}</h3>
+  <img [src]="productImage" width="150" />
+
+  <p>{{ productDescription }}</p>
+  <p>Price: ${{ productPrice }}</p>
+  <p>Discount: {{ discountPercentage * 100 }}%</p>
+  <p>After Discount: ${{ productPrice - productPrice * discountPercentage }}</p>
+
+  <button (click)="decreaseQuantity()">-</button>
+  {{ quantity }}
+  <button (click)="increaseQuantity()">+</button>
+
+  <p>Total Price: ${{ (productPrice - productPrice * discountPercentage) * quantity }}</p>
+
+  <button [disabled]="!isAvailable" (click)="buyProduct()">
+    Buy Now
+  </button>
+
+  <h2>Update Product Details</h2>
+
+  <p>Name: <input [(ngModel)]="productName" /></p>
+
+  <p>Description: <input [(ngModel)]="productDescription" /></p>
+
+  <p>Price: <input type="number" [(ngModel)]="productPrice" /></p>
+
+  <p>Available: <input type="checkbox" [(ngModel)]="isAvailable" /></p>
+</div>

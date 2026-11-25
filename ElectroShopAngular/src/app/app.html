@@ -1,55 +1,15 @@
 <div>
-  @if (isStoreOpen) {
-    <h2>We Are Open</h2>
-  } @else {
-    <h2>We Are Closed</h2>
-  }
+  <app-header-component></app-header-component>
+  <hr />
 
-  <h2>Featured Product</h2>
+  <app-navbar-component></app-navbar-component>
+  <hr />
 
-  <div>
-    <h3>{{ products[0].Name }}</h3>
-    <p>{{ products[0].Description }}</p>
-    <p>
-      Original Price: ${{ products[0].Price }}
-      After Discount: ${{ discountedPrices[0] }}
+  <app-product-list-component></app-product-list-component>
+  <hr />
 
-    </p>
-  </div>
+  <app-product-details-component></app-product-details-component>
+  <hr />
 
-  <h2>Our Products</h2>
-
-  <table border="1">
-    <tr>
-      @for (item of products; track $index) {
-
-          <th>{{ item.Name }}</th>
-
-      }
-    </tr>
-    <tr>
-      @for (item of products; track $index) {
-
-          <td>${{ item.Price }}</td>
-        
-      }
-    </tr>
-  </table>
-
-  <h2>Store Summary</h2>
-
-  <table border="1">
-    <tr>
-      <th>{{ totalProducts }}</th>
-      <th>${{ maximumPrice }}</th>
-      <th>${{ minimumPrice }}</th>
-      <th>${{ sumPrice }}</th>
-    </tr>
-    <tr>
-      <td>Total Products</td>
-      <td>Highest Price</td>
-      <td>Lowest Price</td>
-      <td>Total Products Value</td>
-    </tr>
-  </table>
+  <app-footer></app-footer>
 </div>

@@ -1,0 +1,16 @@
+<h1>Product info</h1>
+<h3>Product name : {{ productName }}</h3>
+<h3>Product description : {{ description }}</h3>
+<h3>Product price : {{ price }}</h3>
+<h3>Product is available : {{ isAvailable }}</h3>
+<h3>Product is quantity : {{ Quantity() }}</h3>
+
+<br /><br />
+
+<button (click)="increase()">+1</button>
+<br />
+<button (click)="decrease()">-1</button>
+<br /><br />
+<button (click)="addToCart()">Add to cart</button>
+
+product

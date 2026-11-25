@@ -1,0 +1,48 @@
+<div>
+  <h2>Our products</h2>
+
+  <div>
+    <h3>{{ products[0].Name }}</h3>
+    <img [src]="products[0].Image" width="150" />
+    <h4>${{ products[0].Price }}</h4>
+    <button [disabled]="!products[0].Availability" (click)="buyProduct(products[0].Name)">
+      Buy Now
+    </button>
+  </div>
+
+  <div>
+    <h3>{{ products[1].Name }}</h3>
+    <img [src]="products[1].Image" width="150" />
+    <h4>${{ products[1].Price }}</h4>
+    <button [disabled]="!products[1].Availability" (click)="buyProduct(products[1].Name)">
+      Buy Now
+    </button>
+  </div>
+
+  <div>
+    <h3>{{ products[2].Name }}</h3>
+    <img [src]="products[2].Image" width="150" />
+    <h4>${{ products[2].Price }}</h4>
+    <button [disabled]="!products[2].Availability" (click)="buyProduct(products[2].Name)">
+      Buy Now
+    </button>
+  </div>
+
+  <div>
+    <h3>{{ products[3].Name }}</h3>
+    <img [src]="products[3].Image" width="150" />
+    <h4>${{ products[3].Price }}</h4>
+    <button [disabled]="!products[3].Availability" (click)="buyProduct(products[3].Name)">
+      Buy Now
+    </button>
+  </div>
+
+  <div>
+    <h3>{{ products[4].Name }}</h3>
+    <img [src]="products[4].Image" width="150" />
+    <h4>${{ products[4].Price }}</h4>
+    <button [disabled]="!products[4].Availability" (click)="buyProduct(products[4].Name)">
+      Buy Now
+    </button>
+  </div>
+</div>
