@@ -1,0 +1,15 @@
+.discount-card {
+  background-color: lightyellow;
+}
+
+.available-card {
+  border: 2px solid green;
+}
+
+.unavailable-card {
+  border: 2px solid red;
+}
+
+.premium-card {
+  font-weight: bold;
+}

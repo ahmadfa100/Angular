@@ -1,0 +1,94 @@
+<div>
+  <h1>Our Products</h1>
+
+  @for (item of products; track item.id) {
+    <div
+      [ngClass]="{
+        'discount-card': item.discount > 0,
+        'available-card': item.isAvailable,
+        'unavailable-card': !item.isAvailable,
+        'premium-card': item.price > 500,
+      }"
+      [ngStyle]="{
+        opacity: item.isAvailable ? 1 : 0.5,
+      }"
+    >
+      <h2>{{ item.name }}</h2>
+
+      <img [src]="item.image" width="150" />
+
+      <h3
+        [ngStyle]="{
+          color: item.discount > 0 ? 'red' : 'black',
+          'font-size': item.price > 500 ? '30px' : '20px',
+        }"
+      >
+        Price : {{ item.price }} JD
+      </h3>
+
+      <p>Category : {{ item.category }}</p>
+
+      @if (item.isAvailable) {
+        <p>Available</p>
+      } @else {
+        <p>Out of Stock</p>
+      }
+
+      @if (item.discount > 0) {
+        <p>Special Offer : {{ item.discount }}%</p>
+      } @else {
+        <p>No Discount</p>
+      }
+
+      @if (item.price > 500) {
+        <p>Premium Product</p>
+      }
+
+      @if (item.isAvailable) {
+        <button (click)="buyProduct(item.name)">Buy Now</button>
+      }
+    </div>
+
+    <br />
+  }
+
+  <hr />
+
+  <h2>Order Status</h2>
+
+  @switch (orderStatus) {
+    @case ('Pending') {
+      <p>Your order is waiting for confirmation.</p>
+    }
+    @case ('Processing') {
+      <p>Your order is being prepared.</p>
+    }
+    @case ('Shipped') {
+      <p>Your order has been shipped.</p>
+    }
+    @case ('Delivered') {
+      <p>Your order has been delivered.</p>
+    }
+    @default {
+      <p>Unknown Order Status.</p>
+    }
+  }
+
+  <hr />
+
+  <h2>Product Categories</h2>
+
+  <p>All Products</p>
+  <p>Electronics</p>
+  <p>Accessories</p>
+
+  <h3>Selected Category : {{ selectedCategory }}</h3>
+
+  @if (selectedCategory == 'All Products') {
+    <p>You selected All Products</p>
+  } @else if (selectedCategory == 'Electronics') {
+    <p>You selected Electronics</p>
+  } @else if (selectedCategory == 'Accessories') {
+    <p>You selected Accessories</p>
+  }
+</div>

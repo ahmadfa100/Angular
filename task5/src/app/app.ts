@@ -2,9 +2,11 @@ import { Component, signal } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { ProductDetailsComponent } from './product-details-component/product-details-component';
 import { ShoppingCartComponent } from './shopping-cart-component/shopping-cart-component';
+import { ProductListComponent } from './product-list-component/product-list-component';
 
 @Component({
-  imports: [ProductDetailsComponent, ShoppingCartComponent],
+  imports: [ProductDetailsComponent, ShoppingCartComponent,    ProductListComponent
+],
   selector: 'app-root',
   styleUrl: './app.css',
   templateUrl: './app.html',
@@ -24,10 +26,10 @@ export class App {
     this.cartPrice = this.price;
   }
 
-  changeProduct(){
-    this.productName = "headphone"
-    this.description = "good one for you"
-    this.price = 120
-    this.isAvailable = true
+  changeProduct() {
+    this.productName = 'headphone';
+    this.description = 'good one for you';
+    this.price = 120;
+    this.isAvailable = true;
   }
 }
